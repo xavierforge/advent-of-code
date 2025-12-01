@@ -1,9 +1,9 @@
 use itertools::Itertools;
 use std::cmp::Ordering;
 
-type Report = Vec<u32>;
+pub type Report = Vec<u32>;
 
-mod parser {
+pub mod parser {
     use super::Report;
 
     pub fn parse_line_to_report(line: &str) -> Report {
