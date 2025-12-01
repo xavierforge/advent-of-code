@@ -1,0 +1,46 @@
+set shell := ["bash", "-c"]
+
+default:
+    @just --list
+
+# Setup environment dependencies
+setup:
+    cargo install cargo-generate cargo-nextest cargo-watch just
+    @echo "✅ Setup complete!"
+
+# Generate a new daily solution from template
+# Usage: just create day-01
+create day:
+    cargo generate --path ./years/2025/daily-template --name {{day}} --destination years/2025
+    @echo "🎉 Created {{day}} in years/2025!"
+
+# Development loop: watch, check, test, and lint on file change
+# Usage: just work day-01
+work day:
+    cargo watch -w years/2025/{{day}} -x "check -p {{day}}" -s "just test {{day}}" -s "just lint {{day}}"
+
+# Run the solution in release mode
+# Usage: just run day-01
+run day:
+    cargo run -p {{day}} --release
+
+# Check code style and quality (Linter)
+# Usage: just lint day-01
+lint day:
+    cargo clippy -p {{day}} -- -D warnings
+
+# Run tests
+# Usage: just test day-01 (runs all tests for the day)
+# Usage: just test day-01 --part 1 (filters for specific tests)
+test day part="":
+    cargo nextest run -p {{day}} {{part}}
+
+# Run Local CI (Format, Clippy, and Test for the entire workspace)
+ci:
+    cargo fmt --all -- --check
+    cargo clippy --workspace -- -D warnings
+    cargo nextest run --workspace
+
+# Build Docker image
+docker-build:
+    docker build -t aoc-2025 .
