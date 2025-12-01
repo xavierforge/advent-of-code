@@ -46,7 +46,7 @@ docker-build:
     docker build -t aoc-2025 .
 
 # Run using Docker
-# Usage: just docker-run day-01 1
+# Usage: just docker-run day-01 part1
 docker-run day part: docker-build
-    @echo "🐳 Running {{day}}-part{{part}} inside Docker..."
-    docker run --rm aoc-2025 {{day}}-part{{part}}
+    @echo "🐳 Running {{day}}-{{part}} inside Docker..."
+    docker run --rm aoc-2025 {{day}}-{{part}}

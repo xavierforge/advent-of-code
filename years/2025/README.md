@@ -94,16 +94,16 @@ The entire lifecycle is automated:
     ```
 2.  **Develop with live feedback** (Watch mode for TDD):
     ```bash
-    just work day-01
+    just work day-01 part1
     ```
 3.  **Run the solution (Local):**
     ```bash
     # Usage: just run <day> <part>
-    just run day-01 1
+    just run day-01 part1
     ```
 4.  **Run inside Docker (Production simulation):**
     ```bash
-    just docker-run day-01 1
+    just docker-run day-01 part1
     ```
 5.  **Pre-push Check (Local CI):**
     ```bash
