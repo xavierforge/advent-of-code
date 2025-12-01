@@ -1,0 +1,25 @@
+name: AoC 2025 CI
+on:
+  push:
+    paths: ['years/2025/**', 'crates/**', 'Cargo.toml', 'Cargo.lock', '.github/**']
+  pull_request:
+    paths: ['years/2025/**', 'crates/**', 'Cargo.toml', 'Cargo.lock', '.github/**']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.89 
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: extractions/setup-just@v1
+
+      - name: Run CI
+        run: just ci
