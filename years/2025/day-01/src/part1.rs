@@ -1,9 +1,9 @@
 // 定義常數以避免 Magic Numbers
-const DIAL_SIZE: i32 = 100;
-const START_POSITION: i32 = 50;
-const TARGET_POSITION: i32 = 0;
+pub const DIAL_SIZE: i32 = 100;
+pub const START_POSITION: i32 = 50;
+pub const TARGET_POSITION: i32 = 0;
 
-fn parse_line_to_rotation(line: &str) -> i32 {
+pub fn parse_line_to_rotation(line: &str) -> i32 {
     let mut chars = line.chars();
     let direction = chars.next();
 
