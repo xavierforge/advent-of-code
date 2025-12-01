@@ -16,13 +16,13 @@ create day:
 
 # Development loop: watch, check, test, and lint on file change
 # Usage: just work day-01
-work day:
-    cargo watch -w years/2025/{{day}} -x "check -p {{day}}" -s "just test {{day}}" -s "just lint {{day}}"
+work day part:
+    cargo watch -w years/2025/{{day}} -x "check -p {{day}}" -s "just test {{day}} {{part}}" -s "just lint {{day}}"
 
 # Run the solution in release mode
-# Usage: just run day-01
-run day:
-    cargo run -p {{day}} --release
+# Usage: just run day-01 part1
+run day part:
+    cargo run -p {{day}} --bin {{part}} --release
 
 # Check code style and quality (Linter)
 # Usage: just lint day-01
