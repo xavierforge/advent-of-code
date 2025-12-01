@@ -22,7 +22,7 @@ work day part:
 # Run the solution in release mode
 # Usage: just run day-01 part1
 run day part:
-    cargo run -p {{day}} --bin {{part}} --release
+    cargo run -p {{day}} --bin {{day}}-{{part}} --release
 
 # Check code style and quality (Linter)
 # Usage: just lint day-01
@@ -44,3 +44,9 @@ ci:
 # Build Docker image
 docker-build:
     docker build -t aoc-2025 .
+
+# Run using Docker
+# Usage: just docker-run day-01 1
+docker-run day part: docker-build
+    @echo "🐳 Running {{day}}-part{{part}} inside Docker..."
+    docker run --rm aoc-2025 {{day}}-part{{part}}
