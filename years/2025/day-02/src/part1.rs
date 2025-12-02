@@ -1,16 +1,16 @@
 #[derive(PartialEq, Debug)]
-struct IdRange {
-    start: u64,
-    end: u64,
+pub struct IdRange {
+    pub start: u64,
+    pub end: u64,
 }
 
 impl IdRange {
-    fn contains(&self, id: u64) -> bool {
+    pub fn contains(&self, id: u64) -> bool {
         id >= self.start && id <= self.end
     }
 }
 
-fn parse_range(input: &str) -> Vec<IdRange> {
+pub fn parse_range(input: &str) -> Vec<IdRange> {
     input
         .replace('\n', "")
         .split(',')
