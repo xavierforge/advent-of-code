@@ -12,10 +12,20 @@ publish = false
 thiserror = "2.0.17"
 itertools = "0.14"
 rstest = "0.26"
+tracing = "0.1.43"
 
 [workspace.dependencies.miette]
 version = "7.6"
 features = ["fancy"]
+
+[workspace.dependencies.test-log]
+version = "0.2.19"
+features = ["trace"]
+default-features = false
+
+[workspace.dependencies.tracing-subscriber]
+version = "0.3.22"
+features = ["fmt", "env-filter"]
 
 [workspace.lints.rust]
 unsafe_code = "forbid"

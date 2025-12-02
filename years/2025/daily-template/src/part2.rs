@@ -1,3 +1,4 @@
+#[tracing::instrument]
 pub fn process(_input: &str) -> miette::Result<String> {
     todo!("part2");
 }
