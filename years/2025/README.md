@@ -115,5 +115,6 @@ The entire lifecycle is automated:
 | Day | Part 1 | Part 2 | DevOps Focus |
 | :---: | :---: | :---: | :--- |
 | 01 | ⭐ | ⭐ | Infrastructure Setup, Dockerfile, CI Pipeline |
-| 02 |   |   | *Pending* |
+| 02 | ⭐ | ⭐ | Observability & Structured Logging (`tracing`, `test-log`) |
+| 03 |   |   | *Pending* |
 | ... | ... | ... | ... |
