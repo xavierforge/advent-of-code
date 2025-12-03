@@ -116,5 +116,6 @@ The entire lifecycle is automated:
 | :---: | :---: | :---: | :--- |
 | 01 | ⭐ | ⭐ | Infrastructure Setup, Dockerfile, CI Pipeline |
 | 02 | ⭐ | ⭐ | Observability & Structured Logging (`tracing`, `test-log`) |
-| 03 |   |   | *Pending* |
+| 03 | ⭐ | ⭐ | Parameterized Testing (`rstest`)|
+| 04 |   |   | *Pending* |
 | ... | ... | ... | ... |
