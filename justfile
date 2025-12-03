@@ -33,7 +33,7 @@ lint day:
 # Usage: just test day-01 (runs all tests for the day)
 # Usage: just test day-01 --part 1 (filters for specific tests)
 test day part="":
-    cargo nextest run -p {{day}} {{part}}
+    RUST_LOG=debug cargo nextest run -p {{day}} {{part}} --success-output immediate
 
 # Run Local CI (Format, Clippy, and Test for the entire workspace)
 ci:
