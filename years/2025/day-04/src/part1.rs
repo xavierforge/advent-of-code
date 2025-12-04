@@ -144,6 +144,13 @@ mod tests {
         assert!(grid.data.is_empty());
     }
 
+    #[test_log::test]
+    fn test_empty_grid_early_stop() {
+        let grid = Grid::new("");
+        let result = grid.count_accessible_rolls();
+        assert_eq!(result, 0);
+    }
+
     #[test_log::test(rstest)]
     #[case("@@@\n@@@\n@@@", 4)] // Dense block. Center has 8 neighbors, Edges have 5. Only 4 corners have 3 (<4).
     #[case("...", 0)] // No paper rolls
