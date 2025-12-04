@@ -50,3 +50,14 @@ docker-build:
 docker-run day part: docker-build
     @echo "🐳 Running {{day}}-{{part}} inside Docker..."
     docker run --rm aoc-2025 {{day}}-{{part}}
+
+cover day:
+    @echo "☂️  Generating coverage for {{day}}..."
+    cargo tarpaulin -p {{day}}
+    @echo "✅ Report generated!"
+
+cover-all:
+    @echo "☂️  Generating FULL 2025 coverage report..."
+    cargo tarpaulin --workspace --out Html --output-dir coverage/all
+    @echo "✅ Unified Report: coverage/all/tarpaulin-report.html"
+    xdg-open coverage/all/tarpaulin-report.html || open coverage/all/tarpaulin-report.html || true

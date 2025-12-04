@@ -1,0 +1,9 @@
+[default]
+out = ["Html"]
+output-dir = "coverage"
+
+ignore-tests = true
+
+exclude-files = ["years/2023/*", "years/2024/*", "**/src/bin/*", "**/main.rs"]
+
+workspace = true
