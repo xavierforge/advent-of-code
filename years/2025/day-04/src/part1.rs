@@ -1,14 +1,14 @@
 use tracing::{debug, info, instrument};
 
-struct Grid {
-    width: usize,
-    height: usize,
-    data: Vec<u8>,
+pub struct Grid {
+    pub width: usize,
+    pub height: usize,
+    pub data: Vec<u8>,
 }
 
 impl Grid {
     #[instrument(skip(input))]
-    fn new(input: &str) -> Self {
+    pub fn new(input: &str) -> Self {
         let lines: Vec<&str> = input.lines().collect();
         let raw_h = lines.len();
         let raw_w = lines.first().map(|l| l.len()).unwrap_or(0);
