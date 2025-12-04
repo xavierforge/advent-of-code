@@ -1,0 +1,24 @@
+[package]
+name = "day-04"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "day-04-part1"
+path = "src/bin/part1.rs"
+
+[[bin]]
+name = "day-04-part2"
+path = "src/bin/part2.rs"
+
+[dependencies]
+itertools.workspace = true
+miette.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true
+test-log.workspace = true
