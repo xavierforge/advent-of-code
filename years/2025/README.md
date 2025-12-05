@@ -118,5 +118,6 @@ The entire lifecycle is automated:
 | 02 | ⭐ | ⭐ | Observability & Structured Logging (`tracing`, `test-log`) |
 | 03 | ⭐ | ⭐ | Parameterized Testing (`rstest`)|
 | 04 | ⭐ | ⭐ | Code Coverage Analysis (`tarpaulin`) |
-| 05 |   |   | *Pending* |
+| 05 | ⭐ | ⭐ | Continuous Deployment (GitHub Pages) |
+| 06 |   |   | *Pending* |
 | ... | ... | ... | ... |
