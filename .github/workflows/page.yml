@@ -1,0 +1,62 @@
+name: Deploy Coverage Report
+
+on:
+  # Allows manual triggering via the "Run workflow" button for testing
+  workflow_dispatch:
+  
+  push:
+    branches: ["main"]
+    # Run only when relevant files change (same path filters as your CI)
+    paths: ['years/2025/**', 'crates/**', 'Cargo.toml', 'Cargo.lock', '.github/**']
+
+# Permissions required for deploying to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Rust 1.89 with components (consistent with your CI)
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.89
+          # Included in case your 'just cover-all' command runs lints
+          components: clippy, rustfmt 
+
+      # Enable caching to speed up builds
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: extractions/setup-just@v1
+
+      # Optimization: Install Tarpaulin binary directly (faster than 'cargo install')
+      - name: Install Tarpaulin
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-tarpaulin
+
+      - name: Generate Coverage
+        run: just cover-all
+
+      # Rename the report to index.html so GitHub Pages can serve it
+      - name: Prepare Pages
+        run: |
+          mkdir -p public
+          mv coverage/all/tarpaulin-report.html public/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
