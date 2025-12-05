@@ -3,9 +3,9 @@ use std::cmp::max;
 use tracing::{info, instrument};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-struct Range {
-    start: u64,
-    end: u64,
+pub struct Range {
+    pub start: u64,
+    pub end: u64,
 }
 
 impl Range {
@@ -18,14 +18,14 @@ impl Range {
     }
 }
 
-struct InventorySystem {
-    merged_ranges: Vec<Range>,
-    candidate_ids: Vec<u64>,
+pub struct InventorySystem {
+    pub merged_ranges: Vec<Range>,
+    pub candidate_ids: Vec<u64>,
 }
 
 impl InventorySystem {
     #[instrument(skip(input))]
-    fn new(input: &str) -> Self {
+    pub fn new(input: &str) -> Self {
         let (range_block, id_block) = match input.split_once("\n\n") {
             Some((r, i)) => (r, i),
             None => (input, ""), // Handle edge case: only ranges, no IDs
