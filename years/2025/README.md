@@ -119,5 +119,6 @@ The entire lifecycle is automated:
 | 03 | ⭐ | ⭐ | Parameterized Testing (`rstest`)|
 | 04 | ⭐ | ⭐ | Code Coverage Analysis (`tarpaulin`) |
 | 05 | ⭐ | ⭐ | Continuous Deployment (GitHub Pages) |
-| 06 |   |   | *Pending* |
+| 06 | ⭐ | ⭐ | |
+| 07 |   |   | *Pending* |
 | ... | ... | ... | ... |
