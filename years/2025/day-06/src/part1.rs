@@ -1,13 +1,13 @@
 use tracing::{info, instrument};
 
 #[derive(Debug)]
-struct Problem {
-    numbers: Vec<u64>,
-    operator: char,
+pub struct Problem {
+    pub numbers: Vec<u64>,
+    pub operator: char,
 }
 
 impl Problem {
-    fn solve(&self) -> u64 {
+    pub fn solve(&self) -> u64 {
         if self.numbers.is_empty() {
             return 0;
         }
@@ -24,10 +24,10 @@ impl Problem {
     }
 }
 
-struct WorksheetParser;
+pub struct WorksheetParser;
 
 impl WorksheetParser {
-    fn to_grid(input: &str) -> Vec<Vec<char>> {
+    pub fn to_grid(input: &str) -> Vec<Vec<char>> {
         let lines: Vec<&str> = input.lines().collect();
         let max_width = lines.iter().map(|l| l.len()).max().unwrap_or(0);
 
@@ -41,7 +41,7 @@ impl WorksheetParser {
             .collect()
     }
 
-    fn is_column_empty(grid: &[Vec<char>], col_idx: usize) -> bool {
+    pub fn is_column_empty(grid: &[Vec<char>], col_idx: usize) -> bool {
         grid.iter()
             .all(|row| row.get(col_idx).unwrap_or(&' ') == &' ')
     }
