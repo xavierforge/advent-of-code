@@ -2,17 +2,17 @@ use std::collections::HashSet;
 
 use tracing::{info, instrument};
 
-type Position = (usize, usize);
+pub type Position = (usize, usize);
 
-struct TachyonLab {
-    grid: Vec<Vec<char>>,
-    width: usize,
-    height: usize,
-    start: Position,
+pub struct TachyonLab {
+    pub grid: Vec<Vec<char>>,
+    pub width: usize,
+    pub height: usize,
+    pub start: Position,
 }
 
 impl TachyonLab {
-    fn new(input: &str) -> Self {
+    pub fn new(input: &str) -> Self {
         let grid = Self::parse_grid(input);
         let height = grid.len();
         let width = grid.first().map(|l| l.len()).unwrap_or(0);
@@ -50,7 +50,7 @@ impl TachyonLab {
     /// Core Physics Logic: Determines the next positions based on current state.
     /// Returns: (Next Positions to visit, Was a splitter activated?)
     /// This function is PURE regarding the simulation state (visited set).
-    fn calculate_next_moves(&self, current: Position) -> (Vec<Position>, bool) {
+    pub fn calculate_next_moves(&self, current: Position) -> (Vec<Position>, bool) {
         let (r, c) = current;
         let next_r = r + 1;
 
