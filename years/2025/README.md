@@ -120,5 +120,6 @@ The entire lifecycle is automated:
 | 04 | ⭐ | ⭐ | Code Coverage Analysis (`tarpaulin`) |
 | 05 | ⭐ | ⭐ | Continuous Deployment (GitHub Pages) |
 | 06 | ⭐ | ⭐ | |
-| 07 |   |   | *Pending* |
+| 07 | ⭐ | ⭐ | |
+| 08 |   |   | *Pending* |
 | ... | ... | ... | ... |
