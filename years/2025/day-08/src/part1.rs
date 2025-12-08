@@ -1,19 +1,19 @@
 use tracing::{debug, info, instrument};
 
-struct Dsu {
+pub struct Dsu {
     parent: Vec<usize>,
     size: Vec<usize>,
 }
 
 impl Dsu {
-    fn new(n: usize) -> Self {
+    pub fn new(n: usize) -> Self {
         Self {
             parent: (0..n).collect(),
             size: vec![1; n],
         }
     }
 
-    fn find(&mut self, i: usize) -> usize {
+    pub fn find(&mut self, i: usize) -> usize {
         if self.parent[i] == i {
             return i;
         }
@@ -22,7 +22,7 @@ impl Dsu {
         root
     }
 
-    fn union(&mut self, i: usize, j: usize) -> bool {
+    pub fn union(&mut self, i: usize, j: usize) -> bool {
         let root_i = self.find(i);
         let root_j = self.find(j);
 
@@ -59,10 +59,10 @@ impl Dsu {
     }
 }
 
-struct Point3D {
-    x: i64,
-    y: i64,
-    z: i64,
+pub struct Point3D {
+    pub x: i64,
+    pub y: i64,
+    pub z: i64,
 }
 
 impl Point3D {
@@ -74,13 +74,13 @@ impl Point3D {
     }
 }
 
-struct Edge {
-    u: usize,
-    v: usize,
-    dist_sq: i64,
+pub struct Edge {
+    pub u: usize,
+    pub v: usize,
+    pub dist_sq: i64,
 }
 
-fn generate_sorted_edges(points: &[Point3D]) -> Vec<Edge> {
+pub fn generate_sorted_edges(points: &[Point3D]) -> Vec<Edge> {
     let n = points.len();
     let mut edges = Vec::with_capacity(n * (n - 1) / 2);
 
