@@ -116,10 +116,11 @@ The entire lifecycle is automated:
 | :---: | :---: | :---: | :--- |
 | 01 | ⭐ | ⭐ | Infrastructure Setup, Dockerfile, CI Pipeline |
 | 02 | ⭐ | ⭐ | Observability & Structured Logging (`tracing`, `test-log`) |
-| 03 | ⭐ | ⭐ | Parameterized Testing (`rstest`)|
+| 03 | ⭐ | ⭐ | Parameterized Testing (`rstest`) |
 | 04 | ⭐ | ⭐ | Code Coverage Analysis (`tarpaulin`) |
 | 05 | ⭐ | ⭐ | Continuous Deployment (GitHub Pages) |
 | 06 | ⭐ | ⭐ | |
 | 07 | ⭐ | ⭐ | |
-| 08 |   |   | *Pending* |
+| 08 | ⭐ | ⭐ | Performance Benchmarking (`divan`) |
+| 09 |   |   | *Pending* |
 | ... | ... | ... | ... |
