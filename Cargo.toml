@@ -13,6 +13,7 @@ thiserror = "2.0.17"
 itertools = "0.14"
 rstest = "0.26"
 tracing = "0.1.43"
+divan = "0.1.21"
 
 [workspace.dependencies.miette]
 version = "7.6"

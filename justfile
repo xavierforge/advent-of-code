@@ -61,3 +61,8 @@ cover-all:
     cargo tarpaulin --workspace --out Html --output-dir coverage/all
     @echo "✅ Unified Report: coverage/all/tarpaulin-report.html"
     xdg-open coverage/all/tarpaulin-report.html || open coverage/all/tarpaulin-report.html || true
+
+# Usage: just bench day-08
+bench day:
+    @echo "🔥 Benchmarking {{day}}..."
+    cargo bench -p {{day}}
