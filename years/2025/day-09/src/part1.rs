@@ -1,23 +1,24 @@
 use tracing::{info, instrument};
 
-struct Point {
-    x: i64,
-    y: i64,
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub struct Point {
+    pub x: i64,
+    pub y: i64,
 }
 
 impl Point {
-    fn new(x: i64, y: i64) -> Self {
+    pub fn new(x: i64, y: i64) -> Self {
         Self { x, y }
     }
 
-    fn area_with(&self, other: &Point) -> i64 {
+    pub fn area_with(&self, other: &Point) -> i64 {
         let width = (self.x - other.x).abs() + 1;
         let height = (self.y - other.y).abs() + 1;
         width * height
     }
 }
 
-fn parse_input(input: &str) -> Vec<Point> {
+pub fn parse_input(input: &str) -> Vec<Point> {
     input
         .lines()
         .filter_map(|line| {
