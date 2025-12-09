@@ -66,3 +66,7 @@ cover-all:
 bench day:
     @echo "🔥 Benchmarking {{day}}..."
     cargo bench -p {{day}}
+
+profile day:
+    @echo "🕵️ Recording with Samply (Running for 30s to gather samples)..."
+    DIVAN_MIN_TIME=30 samply record cargo bench --bench {{day}}-bench

@@ -40,3 +40,7 @@ strip = true
 lto = true
 codegen-units = 1
 panic = "abort"
+
+[profile.bench]
+debug = true
+strip = false
