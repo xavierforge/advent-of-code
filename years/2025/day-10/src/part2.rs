@@ -11,7 +11,7 @@ fn parse_joltage(input: &str) -> Vec<u32> {
         .trim()
         .strip_prefix('{')
         .and_then(|s| s.strip_suffix('}'))
-        .expect("i.kkiInvalid joltage format! Missing curly braces.");
+        .expect("Invalid joltage format! Missing curly braces.");
     content
         .split(',')
         .map(|num_str| {
