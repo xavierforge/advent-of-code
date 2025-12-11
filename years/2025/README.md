@@ -124,5 +124,5 @@ The entire lifecycle is automated:
 | 08 | ⭐ | ⭐ | Performance Benchmarking (`divan`) |
 | 09 | ⭐ | ⭐ | CPU Profiling & Visualization (`samply`) |
 | 10 | ⭐ | ⭐ | |
-| 11 |   |   | *Pending* |
+| 11 | ⭐ | ⭐ | Create Benchmarking Report |
 | 12 |   |   | *Pending* |

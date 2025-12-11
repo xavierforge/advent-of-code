@@ -67,6 +67,10 @@ bench day:
     @echo "🔥 Benchmarking {{day}}..."
     cargo bench -p {{day}}
 
+bench-all:
+    @echo "🔥 Benchmarking ALL" 
+    cargo bench -q | awk '/fastest|├|╰|│/ { if ($0 ~ /day/ && n++) print ""; print }' > benchmarks.txt
+
 profile day:
     @echo "🕵️ Recording with Samply (Running for 30s to gather samples)..."
     DIVAN_MIN_TIME=30 samply record cargo bench --bench {{day}}-bench
