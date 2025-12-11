@@ -2,9 +2,9 @@ use std::collections::HashMap;
 
 use tracing::instrument;
 
-type Graph = HashMap<String, Vec<String>>;
+pub type Graph = HashMap<String, Vec<String>>;
 
-fn parse_input(input: &str) -> Graph {
+pub fn parse_input(input: &str) -> Graph {
     input
         .lines()
         .filter_map(|line| {
