@@ -1,6 +1,6 @@
 #[tracing::instrument]
 pub fn process(_input: &str) -> miette::Result<String> {
-    todo!("part2");
+    Ok("Merry Xmas! 🎄".to_string())
 }
 
 #[cfg(test)]
@@ -9,9 +9,8 @@ mod tests {
 
     #[test]
     fn test_process() -> miette::Result<()> {
-        todo!("build test");
         let input = "";
-        assert_eq!("", process(input)?);
+        assert_eq!("Merry Xmas! 🎄", process(input)?);
         Ok(())
     }
 }
