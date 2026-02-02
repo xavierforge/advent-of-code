@@ -125,4 +125,4 @@ The entire lifecycle is automated:
 | 09 | ⭐ | ⭐ | CPU Profiling & Visualization (`samply`) |
 | 10 | ⭐ | ⭐ | |
 | 11 | ⭐ | ⭐ | Create Benchmarking Report |
-| 12 |   |   | *Pending* |
+| 12 | ⭐ | ⭐ | *Pending* |
